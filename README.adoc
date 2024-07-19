@@ -51,12 +51,7 @@ Run the Docker container to clean your repository. Replace `/path/to/your/repo` 
 docker run -v /path/to/your/repo:/repo bfg-repo-cleaner --delete-files your-file-to-remove /repo
 -------
 
-
-For example, if your repository is located at `C:\Users\YourName\Documents\REPOS\your-repo`, use:
-
-
-
-
+For example, if your repository is located at `C:\Users\YourName\Documents\REPOS\your-repo`, use
 
 [source, shell]
 -------
@@ -67,105 +62,12 @@ docker run -v /c/Users/YourName/Documents/REPOS/your-repo:/repo bfg-repo-cleaner
 
 After running BFG Repo-Cleaner, you need to clean up the Git reflog and perform garbage collection:
 
-
-
 [source, shell]
 -------
 cd /path/to/your/repo
 git reflog expire --expire=now --all
 git gc --prune=now --aggressive
 -------
-
-
-=== Step 6: Force Push the Changes
-
-Finally, push the cleaned history back to your remote repository:
-
-
-
-[source, shell]
--------
-
-
-Certainly! Here is a README file in AsciiDoc format for your repository:
-
-asciidoc
-Copy code
-= Clean Git Repository with BFG
-:repo-url: https://github.com/StefanSchade/clean-git-repo-with-bfg
-:description: A small but convenient Docker setup that utilizes BFG Repo-Cleaner. Simplifies the process if you want to use this Unix tool from Windows.
-
-== Description
-
-`clean-git-repo-with-bfg` is a simple Docker setup that makes it easier to use the BFG Repo-Cleaner on Windows. BFG Repo-Cleaner is a powerful tool for removing large or sensitive files from Git history. This setup allows Windows users to leverage the tool without needing a Unix-like environment.
-
-== Prerequisites
-
-- Docker Desktop installed on your Windows machine
-- Basic knowledge of Git and Docker
-- A Git repository you need to clean
-
-== Usage
-
-Follow these steps to remove files from your Git history using this Docker setup:
-
-=== Step 1: Clone the Repository
-
-First, clone this repository to get the Dockerfile:
-
-git clone https://github.com/StefanSchade/clean-git-repo-with-bfg.git
-cd clean-git-repo-with-bfg
-
-arduino
-Copy code
-
-=== Step 2: Build the Docker Image
-
-Build the Docker image using the provided Dockerfile:
-
-docker build -t bfg-repo-cleaner .
-
-vbnet
-Copy code
-
-=== Step 3: Prepare Your Repository
-
-Ensure your repository is cloned locally. If it’s not already cloned, do it now:
-
-git clone https://github.com/your-username/your-repo.git
-cd your-repo
-
-vbnet
-Copy code
-
-Replace `your-username` and `your-repo` with your actual GitHub username and repository name.
-
-=== Step 4: Run BFG Repo-Cleaner
-
-Run the Docker container to clean your repository. Replace `/path/to/your/repo` with the actual path to your cloned repository:
-
-docker run -v /path/to/your/repo:/repo bfg-repo-cleaner --delete-files your-file-to-remove /repo
-
-r
-Copy code
-
-For example, if your repository is located at `C:\Users\YourName\Documents\REPOS\your-repo`, use:
-
-docker run -v /c/Users/YourName/Documents/REPOS/your-repo:/repo bfg-repo-cleaner --delete-files your-file-to-remove /repo
-
-mathematica
-Copy code
-
-=== Step 5: Clean Up the Repository
-
-After running BFG Repo-Cleaner, you need to clean up the Git reflog and perform garbage collection:
-
-cd /path/to/your/repo
-git reflog expire --expire=now --all
-git gc --prune=now --aggressive
-
-vbnet
-Copy code
 
 === Step 6: Force Push the Changes
 
